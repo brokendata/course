@@ -41,9 +41,7 @@ instance Functor Id where
     (a -> b)
     -> Id a
     -> Id b
-  (<$>) =
-    error "todo: Course.Functor (<$>)#instance Id"
-
+  (<$>) f (Id a) = Id (f a)   
 -- | Maps a function on the List functor.
 --
 -- >>> (+1) <$> Nil
@@ -56,9 +54,7 @@ instance Functor List where
     (a -> b)
     -> List a
     -> List b
-  (<$>) =
-    error "todo: Course.Functor (<$>)#instance List"
-
+  (<$>) f la = map f la 
 -- | Maps a function on the Optional functor.
 --
 -- >>> (+1) <$> Empty
